@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-400;
+  }
+  .center-cont {
+    @apply flex flex-col justify-center items-center text-center  h-screen overflow-hidden;
+  }
+  .center {
+    @apply flex flex-col justify-center items-center text-center overflow-hidden;
+  }
+  .text-input {
+    @apply border border-gray-400 ring ring-gray-400 ring-opacity-50 rounded focus:outline-none;
+  }
+}
+
+/*number input daki butonları kaldırma*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type='number'] {
+  -moz-appearance: textfield; /* Firefox */
+}
